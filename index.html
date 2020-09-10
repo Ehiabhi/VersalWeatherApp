@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title>Versal Weather Check</title>
+
+    <!-- CDN FILES -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- LOCAL FILES -->
+    <!-- <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css" /> -->
+
+
+
+    <link rel="stylesheet" href="./font/Rimouski.css">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <div class="container1 text-center" id="container1">
+        <div class="app-title">
+            <p>Weather Update</p>
+        </div>
+        <div class="notification"></div>
+        <div class="weather-container">
+            <div class="weather-icon">
+                <img src="./icons/unknown.png" alt="weather-icon">
+            </div>
+            <div class="temperature-value">
+                <p>- &deg;<span>C</span></p>
+            </div>
+            <div class="temperature-description">
+                <p>-</p>
+            </div>
+            <div class="location">
+                <p>-</p>
+            </div>
+        </div>
+
+        <div class="row text-center" id="weather-access-container">
+            <div class="col-sm-12">
+                <p>Welcome, do you want to get weather information for current location or some other location?</p>
+                <form id="weather-access-form" class="form-horizontal" method="POST" action="/">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input id="currentLocation" type="submit" value="Current Location"
+                                class="btn btn-dark form-button">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input id="otherLocation" type="submit" value="Other Location" class="btn form-button">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Search Options Form -->
+        <div class="row contact-form text-center" id="SearchOptions">
+            <div class="col-sm-12">
+                <p>Please Select a search option</p>
+                <form id="SearchOptionsForm" class="form-horizontal" method="POST" action="/">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-12">
+                            <input id="NameSearch" class="btn form-button" type="submit" value="Search By Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-12">
+                            <input id="CordinatesSearch" class="btn form-button" type="submit"
+                                value="Search By Cordinates">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- coordinates call form -->
+        <div class="row contact-form text-center" id="coordinateDiv">
+            <div class="col-sm-12">
+                <p>Input your coordinates</p>
+                <form id="coordinates-search-form" class="form-horizontal" method="POST" action="/">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="number" step=any class="form-control" id="lat" placeholder="Latitude"
+                                name="lat" max="90" min="-90" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="number" step=any class="form-control" id="lon" placeholder="Longitude"
+                                name="lon" max="180" min="-180" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-12">
+                            <input class="btn form-button" type="submit" value="submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- city call form -->
+        <div class="row contact-form text-center" id="nameDiv">
+            <div class="col-sm-12">
+                <p>Enter City/Country Name</p>
+                <form id="name-search-form" class="form-horizontal" method="POST" action="/">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="location" placeholder="Name of place"
+                                required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-12">
+                            <input class="btn form-button" type="submit" value="submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row contact-form text-center" id="trigger">
+            <div class="col-sm-12">
+                <form class="form-horizontal">
+                    <input class="btn form-button" id="repeatSearch" type="submit" value="Search Again">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- CDN FILES -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+    <!-- <script src="bootstrap-4.4.1-dist/js/jquery.js"></script>
+        <script src="bootstrap-4.4.1-dist/js/popper.js"></script>
+        <script src="bootstrap-4.4.1-dist/js/bootstrap.js"></script> -->
+
+    <!-- <script src="./config.js" type="text/javaScript"> -->
+    <script src="./js/app.js" type="text/javaScript"></script>
+
+</body>
+
+</html>
