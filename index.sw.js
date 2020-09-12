@@ -29,7 +29,16 @@ const urlList = [
     "/service-workers/icons/13n.png",
     "/service-workers/icons/50d.png",
     "/service-workers/icons/50n.png",
-    "/service-workers/icons/unknown.png"
+    "/service-workers/icons/unknown.png",
+    "/service-workers/icons/android-chrome-192x192.png",
+    "/service-workers/icons/apple-touch-icon.png",
+    "/service-workers/icons/browserconfig.xml",
+    "/service-workers/icons/favicon.ico",
+    "/service-workers/icons/favicon-16x16.png",
+    "/service-workers/icons/favicon-32x32.png",
+    "/service-workers/icons/mstile-150x150.png",
+    "/service-workers/icons/safari-pinned-tab.svg",
+    "/service-workers/icons/site.webmanifest"
 ];
 
 self.addEventListener("install", function (installer) {
