@@ -216,25 +216,4 @@ document.addEventListener("DOMContentLoaded", function () {
         let currentForm = document.getElementById("trigger");
         currentForm.style.display = "none";
     });
-
-    if (navigator.serviceWorker) {
-        window.addEventListener("load", async function () {
-            try {
-                const registration = await navigator.serviceWorker.register("./index.sw.js");
-                console.log("Service worker registration successful.");
-                console.log(`Registered with scope: ${registration.scope}`);
-            } catch (e) {
-                debugger;
-                console.log("Service worker registration failed.");
-                console.log(e);
-            }
-        });
-    }
-
-
-
-
-
-
-
 });
