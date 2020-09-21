@@ -14,5 +14,11 @@ Weather searches are saved, hence, when the application is reloaded, the last we
 The application is also installable on a mobile device so that the appliction can be opened independently without a web browser.
 
 
+# Technologies
+HTML
+CSS
+JavaScript
+
+
 # Live Link
 [VersalWeatherApp](https://versalweda.web.app/)
