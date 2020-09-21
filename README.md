@@ -15,9 +15,10 @@ The application is also installable on a mobile device so that the appliction ca
 
 
 # Technologies
-HTML
-CSS
-JavaScript
+>HTML
+>CSS
+>JavaScript
+>[Open Weather API service](https://openweathermap.org/current)
 
 
 # Live Link
